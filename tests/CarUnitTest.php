@@ -30,17 +30,17 @@ class CarUnitTest extends TestCase
     {
         $car = new Car();
 
-        $car->setPrice(8000,50);
+        $car->setPrice('8000,50');
         $car->setImage('file');
-        $car->setYear(1990);
-        $car->setKilometers(45000);
+        $car->setYear('1990');
+        $car->setKilometers('45000');
         $car->setDescription('description');
         $car->setSlug('slug');
 
-        $this->assertFalse($car->getPrice() === 0);
+        $this->assertFalse($car->getPrice() === '0');
         $this->assertFalse($car->getImage() === 'false');
-        $this->assertFalse($car->getYear() === 0);
-        $this->assertFalse($car->getKilometers() === 0);
+        $this->assertFalse($car->getYear() === '0');
+        $this->assertFalse($car->getKilometers() === '0');
         $this->assertFalse($car->getDescription() === 'false');
         $this->assertFalse($car->getSlug() === 'false');
     }

@@ -13,11 +13,11 @@ class ReviewUnitTest extends TestCase
 
         $review->setName('name');
         $review->setBody('text');
-        $review->setNote('5');
+        $review->setNote(5);
 
         $this->assertTrue($review->getName() === 'name');
         $this->assertTrue($review->getBody() === 'text');
-        $this->assertTrue($review->getNote() === '5');
+        $this->assertTrue($review->getNote() === 5);
     }
 
     public function testIsFalse()
@@ -26,11 +26,11 @@ class ReviewUnitTest extends TestCase
 
         $review->setName('name');
         $review->setBody('text');
-        $review->setNote('5');
+        $review->setNote(5);
 
         $this->assertFalse($review->getName() === 'false');
         $this->assertFalse($review->getBody() === 'false');
-        $this->assertFalse($review->getNote() === '0');
+        $this->assertFalse($review->getNote() === 0);
     }
 
     public function testIsEmpty()
