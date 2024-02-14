@@ -35,7 +35,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('ECF Garage V2');
+            ->setTitle('Name Garage Admin Panel');
     }
 
     public function configureMenuItems(): iterable
