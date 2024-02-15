@@ -8,6 +8,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+use App\Entity\Car;
+use App\Entity\Review;
+use App\Entity\Employee;
+
 class DashboardController extends AbstractDashboardController
 {
     #[Route('/admin', name: 'admin')]
@@ -41,6 +45,10 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
+        yield MenuItem::linkToCrud('Cars', 'fas fa-car', Car::class);
+        yield MenuItem::linkToCrud('Reviews', 'fas fa-star', Review::class);
+        yield MenuItem::linkToCrud('Employees', 'fas fa-person', Employee::class)
+        ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToLogout('Logout', 'fa fa-sign-out');
     }
 }
