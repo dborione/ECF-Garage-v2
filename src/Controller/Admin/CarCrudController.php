@@ -19,6 +19,7 @@ class CarCrudController extends AbstractCrudController
     {
         return [
             //IdField::new('id'),
+            TextField::new('title'),
             TextField::new('kilometers'),
             TextField::new('year'),
             TextField::new('price'),
