@@ -11,6 +11,7 @@ class CarUnitTest extends TestCase
     {
         $car = new Car();
 
+        $car->setTitle('title');
         $car->setPrice('8000');
         $car->setImage('file');
         $car->setYear('1990');
@@ -18,6 +19,7 @@ class CarUnitTest extends TestCase
         $car->setDescription('text');
         $car->setSlug('slug');
 
+        $this->assertTrue($car->getTitle() === 'title');
         $this->assertTrue($car->getPrice() === '8000');
         $this->assertTrue($car->getImage() === 'file');
         $this->assertTrue($car->getYear() === '1990');
@@ -30,6 +32,7 @@ class CarUnitTest extends TestCase
     {
         $car = new Car();
 
+        $car->setTitle('title');
         $car->setPrice('8000,50');
         $car->setImage('file');
         $car->setYear('1990');
@@ -37,6 +40,7 @@ class CarUnitTest extends TestCase
         $car->setDescription('description');
         $car->setSlug('slug');
 
+        $this->assertFalse($car->getTitle() === 'false');
         $this->assertFalse($car->getPrice() === '0');
         $this->assertFalse($car->getImage() === 'false');
         $this->assertFalse($car->getYear() === '0');
@@ -49,6 +53,7 @@ class CarUnitTest extends TestCase
     {
         $car = new Car();
 
+        $this->assertEmpty($car->getTitle());
         $this->assertEmpty($car->getPrice());
         $this->assertEmpty($car->getImage());
         $this->assertEmpty($car->getYear());
