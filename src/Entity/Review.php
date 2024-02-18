@@ -23,6 +23,9 @@ class Review
     #[ORM\Column]
     private ?int $note = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $status = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +63,18 @@ class Review
     public function setNote(int $note): static
     {
         $this->note = $note;
+
+        return $this;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): static
+    {
+        $this->status = $status;
 
         return $this;
     }

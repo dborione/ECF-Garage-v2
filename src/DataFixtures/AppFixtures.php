@@ -46,27 +46,29 @@ class AppFixtures extends Fixture
         
         $manager->persist($employee);
 
-        for ($i = 0; $i < 10; $i++)
+        for ($i = 0; $i < 50; $i++)
         {
             $car = new Car();
 
-            $car->setPrice('8000');
+            $car->setTitle($faker->sentence($nbWords = 6));
+            $car->setPrice($faker->randomFloat($nbMaxDecimals = 2, $min = 100, $max = 1000000));
             $car->setImage('file');
-            $car->setYear('1990');
-            $car->setKilometers('45000');
+            $car->setYear($faker->year($max = 'now'));
+            $car->setKilometers($faker->numberBetween($min = 0, $max = 500000));
             $car->setDescription($faker->paragraph());
-            $car->setSlug($faker->slug());
+            $car->setSlug($faker->slug(1));
 
             $manager->persist($car);
         }
 
-        for ($i = 0; $i < 5; $i++)
+        for ($i = 0; $i < 10; $i++)
         {
             $review = new Review();
 
-            $review->setName('name');
-            $review->setBody('text');
-            $review->setNote(5);
+            $review->setName($faker->firstName());
+            $review->setBody($faker->paragraph());
+            $review->setNote($faker->numberBetween($min = 1, $max = 5));
+            $review->setStatus($faker->randomElement($array = array ('pending','denied','approved')));
         
             $manager->persist($review);
         }
