@@ -9,6 +9,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use App\Entity\Employee;
 use App\Entity\Car;
 use App\Entity\Review;
+use App\Entity\Service;
 use Faker;
 use Faker\Factory;
 
@@ -71,6 +72,16 @@ class AppFixtures extends Fixture
             $review->setStatus($faker->randomElement($array = array ('pending','denied','approved')));
         
             $manager->persist($review);
+        }
+
+        for ($i = 0; $i < 6; $i++)
+        {
+            $service = new Service();
+
+            $service->setName($faker->word);
+            $service->setDescription($faker->sentence($nbWords = 5));
+        
+            $manager->persist($service);
         }
 
         $manager->flush();
