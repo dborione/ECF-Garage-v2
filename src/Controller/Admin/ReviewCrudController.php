@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Review;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 
@@ -41,7 +41,7 @@ class ReviewCrudController extends AbstractCrudController
         return [
             // IdField::new('id'),
             TextField::new('name'),
-            TextEditorField::new('body'),
+            TextAreaField::new('body')->stripTags(),
             ChoiceField::new('status', 'Status')->autocomplete(true)
             // ->setValue('approved')
             ->setChoices(array_combine($status, $status))
