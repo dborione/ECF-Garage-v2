@@ -1,8 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Garage!{% endblock %}
+
+{% block body %}
+{% include "cars/nav.html.twig" %}
 <!-- Cars Section -->
 <div class="max-w-[85rem] px-4 py-20 sm:px-6 lg:px-8 lg:py-20 mx-auto">
   <!-- Section Title -->
   <div class="max-w-[85rem] px-2 py-10 sm:px-6 sm:py-15 lg:max-w-7xl lg:px-2">
-    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Our latest cars on sale</h2>
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">All of our cars on sale</h2>
   </div>
   <!-- End Section Title -->
   <!-- Grid -->
@@ -37,14 +43,9 @@
     {% endfor %}
     </a>
     <!-- End Card -->
-    <!-- Section Title -->
-    <div class="max-w-[85rem] ">
-      <a href="{{ path('app_cars' )}}">
-        <h2 class="text-2xl font-bold tracking-tight text-gray-500 hover:text-gray-600 hover:underline">→ See more cars </h2>
-      </a>
-    </div>
-  <!-- End Section Title -->
   </div>
   <!-- End Grid -->
 </div>
 <!-- End Card Blog -->
+<script src={{ asset("/app.js")}}></script>
+{% endblock %}
