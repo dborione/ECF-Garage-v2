@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Car;
 use App\Entity\Review;
 use App\Entity\Employee;
+use App\Entity\Service;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -48,6 +49,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Cars', 'fas fa-car', Car::class);
         yield MenuItem::linkToCrud('Reviews', 'fas fa-star', Review::class);
         yield MenuItem::linkToCrud('Employees', 'fas fa-person', Employee::class)
+        ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Services', 'fas fa-toolbox', Service::class)
         ->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToLogout('Logout', 'fa fa-sign-out');
     }
