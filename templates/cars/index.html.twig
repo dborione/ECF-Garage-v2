@@ -15,7 +15,7 @@
   <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
     <!-- Card -->
     {% for car in cars %}
-    <a href={{ car.slug }}>
+    <a href={{ path('app_cars_slug', {'slug': car.slug})}}>
     <div class="group group-hover:opacity-75 flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
         <div class="h-52 flex flex-col justify-center items-center bg-gray-200 rounded-t-xl">
           <img src={{ car.image }} alt="Image of the car" class="h-full w-full object-cover object-center lg:h-full lg:w-full">

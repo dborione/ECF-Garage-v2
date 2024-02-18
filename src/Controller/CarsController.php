@@ -17,4 +17,13 @@ class CarsController extends AbstractController
             'cars' => $carRepository->findAll(),
         ]);
     }
+
+    #[Route('/cars/{slug}', name: 'app_cars_slug', methods: ['GET'])]
+    public function seeCar(string $slug): Response
+    {
+        // return $this->render('cars/index.html.twig', [
+        //     'cars' => $carRepository->findAll(),
+        // ]);
+        dd($slug);
+    }
 }
