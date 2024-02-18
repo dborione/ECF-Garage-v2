@@ -20,7 +20,7 @@ class ServiceCrudController extends AbstractCrudController
     {
         return [
             // IdField::new('id'),
-            TextField::new('title'),
+            TextField::new('name'),
             TextAreaField::new('description'),
         ];
     }
