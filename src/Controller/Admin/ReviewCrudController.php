@@ -41,13 +41,17 @@ class ReviewCrudController extends AbstractCrudController
         return [
             // IdField::new('id'),
             TextField::new('name'),
+            // ->setFormTypeOption('disabled','disabled'),
             TextAreaField::new('body')->stripTags(),
+            // ->setFormTypeOption('disabled','disabled')
+            // ->setFormTypeOption('required','required'),
             ChoiceField::new('status', 'Status')->autocomplete(true)
             // ->setValue('approved')
             ->setChoices(array_combine($status, $status))
             ->renderAsBadges($statusBadges),
             ChoiceField::new('note', 'Note')
             ->setChoices(array_combine($notes, $notes))
+            // ->setFormTypeOption('disabled','disabled')
         ];
     }
 }
