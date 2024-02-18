@@ -18,23 +18,36 @@ class ReviewCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+        $status = [
+            'pending' => 'pending',
+            'approved' => 'approved',
+            'denied' => 'denied'
+        ];
+
+        $statusBadges = [
+            'pending' => 'warning',
+            'approved' => 'success',
+            'denied' => 'danger'
+        ];
+
         $notes = [
-            'Review' => '1',
-            'Review' => '2',
-            'Review' => '3',
-            'Review' => '4',
-            'Review' => '5'
+            '1' => '1',
+            '2' => '2',
+            '3' => '3',
+            '4' => '4',
+            '5' => '5'
         ];
         
         return [
             // IdField::new('id'),
             TextField::new('name'),
             TextEditorField::new('body'),
+            ChoiceField::new('status', 'Status')->autocomplete(true)
+            // ->setValue('approved')
+            ->setChoices(array_combine($status, $status))
+            ->renderAsBadges($statusBadges),
             ChoiceField::new('note', 'Note')
-            //->setChoices(['Manager' => 'ROLE_MANAGER'])
-            //->autocomplete(true)
             ->setChoices(array_combine($notes, $notes))
-            ->renderExpanded()
         ];
     }
 }

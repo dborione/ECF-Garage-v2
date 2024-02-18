@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 
 class CarCrudController extends AbstractCrudController
 {
@@ -19,9 +20,10 @@ class CarCrudController extends AbstractCrudController
     {
         return [
             //IdField::new('id'),
+            TextField::new('title'),
             TextField::new('kilometers'),
             TextField::new('year'),
-            TextField::new('price'),
+            MoneyField::new('price')->setCurrency('EUR'),
             TextField::new('image'),
             TextEditorField::new('description'),
             TextField::new('slug'),
