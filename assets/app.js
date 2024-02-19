@@ -7,6 +7,7 @@
 import './styles/app.css';
 import htmx from 'htmx.org';
 import 'preline';
+// import 'preline/dropdown';
 
 window.htmx = htmx;
 
