@@ -14,12 +14,15 @@ use Doctrine\ORM\EntityManagerInterface;
 class CarsController extends AbstractController
 {
     #[Route('/cars', name: 'app_cars')]
-    public function index(CarRepository $carRepository): Response
+    public function index(Request $request, CarRepository $carRepository): Response
     {
+        $input = $request->get('search');
+
         return $this->render('cars/index.html.twig', [
             'cars' => $carRepository->findAll(),
             'highest_km' => $carRepository->highestKm(),
             'lowest_km' => $carRepository->lowestKm(),
+            // 'search_cars' => $carRepository->getByContentLike($input),
         ]);
     }
 
