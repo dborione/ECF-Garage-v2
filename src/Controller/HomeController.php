@@ -15,29 +15,6 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class HomeController extends AbstractController
 {
-    // public function contact(Request $request, EntityManagerInterface $entityManager): Response
-    // {
-    //     $contactMessage = new ContactMessage();
-
-    //     $form = $this->createForm(ContactMessageType::class, $contactMessage);
-
-    //     $form->handleRequest($request);
-    //     if ($form->isSubmitted() && $form->isValid()) {
-    //         $contactMessage = new ContactMessage();
-
-    //         contactMessage->$form->getData();
-            
-    //         $entityManager->persist($contactMessage);
-    //         $entityManager->flush();
-
-    //         return $this->redirectToRoute('app_contact_message');
-    //     }
-
-    //     return $this->render('contact_message/index.html.twig', [
-    //         'contactForm' => $form,
-    //     ]);
-    // }
-
     #[Route('/home', name: 'app_home')]
     public function index(Request $request, EntityManagerInterface $entityManager, ReviewRepository $reviewRepository, CarRepository $carRepository, ServiceRepository $serviceRepository): Response
     {
