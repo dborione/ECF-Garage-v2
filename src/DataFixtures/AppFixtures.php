@@ -93,8 +93,9 @@ class AppFixtures extends Fixture
             $contactMessage->setLastName($faker->lastName());
             $contactMessage->setEmail($faker->email());
             $contactMessage->setPhoneNumber('+3300000000');
+            $contactMessage->setSubject($faker->sentence($nbWords = 5));
             $contactMessage->setBody($faker->paragraph());
-            
+
             $manager->persist($contactMessage);
         }
 

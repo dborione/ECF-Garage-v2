@@ -29,6 +29,9 @@ class ContactMessage
     #[ORM\Column(type: Types::TEXT)]
     private ?string $body = null;
 
+    #[ORM\Column(length: 800)]
+    private ?string $subject = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class ContactMessage
     public function setBody(string $body): static
     {
         $this->body = $body;
+
+        return $this;
+    }
+
+    public function getSubject(): ?string
+    {
+        return $this->subject;
+    }
+
+    public function setSubject(string $subject): static
+    {
+        $this->subject = $subject;
 
         return $this;
     }
