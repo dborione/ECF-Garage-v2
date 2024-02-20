@@ -23,12 +23,11 @@ class ReviewController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $review = new Review();
+
             $review->setName($form->get('name')->getData());
             $review->setNote($form->get('note')->getData());
             $review->setBody($form->get('body')->getData());
             $review->setStatus('pending');
-
-            // $review = $form->getData();
             
             $entityManager->persist($review);
             $entityManager->flush();
