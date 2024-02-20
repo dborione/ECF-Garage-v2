@@ -36,15 +36,16 @@ class CarRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Car
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+   public function findOneBySomeField(string $slug): ?Car
+   {
+        // dd($slug);
+       return $this->createQueryBuilder('c')
+           ->andWhere('c.slug LIKE :slug')
+           ->setParameter('slug', $slug)
+           ->getQuery()
+           ->getOneOrNullResult()
+       ;
+   }
 
     /**
     * @return Car[] Returns last ten Car objects

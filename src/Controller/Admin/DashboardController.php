@@ -12,6 +12,7 @@ use App\Entity\Car;
 use App\Entity\Review;
 use App\Entity\Employee;
 use App\Entity\Service;
+use App\Entity\ContactMessage;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -48,6 +49,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Cars', 'fas fa-car', Car::class);
         yield MenuItem::linkToCrud('Reviews', 'fas fa-star', Review::class);
+        yield MenuItem::linkToCrud('Contact Messages', 'far fa-envelope-open', ContactMessage::class);
         yield MenuItem::linkToCrud('Employees', 'fas fa-person', Employee::class)
         ->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Services', 'fas fa-toolbox', Service::class)
