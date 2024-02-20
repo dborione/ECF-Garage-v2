@@ -15,7 +15,7 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class HomeController extends AbstractController
 {
-    #[Route('/home', name: 'app_home')]
+    #[Route('/', name: 'app_home')]
     public function index(Request $request, EntityManagerInterface $entityManager, ReviewRepository $reviewRepository, CarRepository $carRepository, ServiceRepository $serviceRepository): Response
     {
         $contactMessage = new ContactMessage();
