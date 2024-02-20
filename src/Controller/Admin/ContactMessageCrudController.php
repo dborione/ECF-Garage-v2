@@ -24,6 +24,7 @@ class ContactMessageCrudController extends AbstractCrudController
             TextField::new('lastName')->setFormTypeOption('disabled','disabled'),
             TextField::new('phoneNumber')->setFormTypeOption('disabled','disabled'),
             TextField::new('email')->setFormTypeOption('disabled','disabled'),
+            TextField::new('subject')->setFormTypeOption('disabled','disabled'),
             TextAreaField::new('body')->stripTags()->setFormTypeOption('disabled','disabled'),
         ];
     }

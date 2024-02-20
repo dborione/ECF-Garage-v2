@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 
 class CarCrudController extends AbstractCrudController
 {
@@ -25,9 +26,9 @@ class CarCrudController extends AbstractCrudController
             TextField::new('kilometers'),
             TextField::new('year'),
             MoneyField::new('price')->setCurrency('EUR'),
-            ImageField::new('image'),
+            ImageField::new('image')->setUploadDir('assets/images/'),
             TextAreaField::new('description'),
-            TextField::new('slug'),
+            SlugField::new('slug')->setTargetFieldName('title'),
         ];
     }
 }
