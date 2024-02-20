@@ -25,7 +25,7 @@
 
         <div class="mb-4 sm:mb-8">
           <label for="hs-feedback-post-comment-email-1" class="block mb-2 text-sm font-medium dark:text-white">Note</label>
-          <input type="text" inputmode="numeric" pattern="[1-5]*" name="{{ field_name(reviewForm.note) }}" required="required" id="hs-feedback-post-comment-email-1" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" placeholder="Between 1 and 5">
+          <input type="number" min="1" max="5" name="{{ field_name(reviewForm.note) }}" required="required" id="hs-feedback-post-comment-email-1" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" placeholder="Between 1 and 5">
         </div>
 
         <div>
