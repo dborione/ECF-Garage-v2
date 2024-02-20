@@ -1,7 +1,7 @@
 <?php return array (
-  '@hotwired/stimulus' => 
+  'htmx.org' => 
   array (
-    'version' => '3.2.2',
+    'version' => '1.9.10',
     'dependencies' => 
     array (
     ),
@@ -9,9 +9,9 @@
     array (
     ),
   ),
-  '@hotwired/turbo' => 
+  'preline' => 
   array (
-    'version' => '7.3.0',
+    'version' => '2.0.3',
     'dependencies' => 
     array (
     ),

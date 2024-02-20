@@ -5,9 +5,10 @@ namespace App\Controller\Admin;
 use App\Entity\Car;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
 class CarCrudController extends AbstractCrudController
 {
@@ -24,8 +25,8 @@ class CarCrudController extends AbstractCrudController
             TextField::new('kilometers'),
             TextField::new('year'),
             MoneyField::new('price')->setCurrency('EUR'),
-            TextField::new('image'),
-            TextEditorField::new('description'),
+            ImageField::new('image'),
+            TextAreaField::new('description'),
             TextField::new('slug'),
         ];
     }
