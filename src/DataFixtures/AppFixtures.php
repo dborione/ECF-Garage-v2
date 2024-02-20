@@ -10,6 +10,7 @@ use App\Entity\Employee;
 use App\Entity\Car;
 use App\Entity\Review;
 use App\Entity\Service;
+use App\Entity\ContactMessage;
 use Faker;
 use Faker\Factory;
 
@@ -82,6 +83,20 @@ class AppFixtures extends Fixture
             $service->setDescription($faker->sentence($nbWords = 5));
         
             $manager->persist($service);
+        }
+
+        for ($i = 0; $i < 10; $i++)
+        {
+            $contactMessage = new ContactMessage();
+
+            $contactMessage->setFirstName($faker->firstName());
+            $contactMessage->setLastName($faker->lastName());
+            $contactMessage->setEmail($faker->email());
+            $contactMessage->setPhoneNumber('+3300000000');
+            $contactMessage->setSubject($faker->sentence($nbWords = 5));
+            $contactMessage->setBody($faker->paragraph());
+
+            $manager->persist($contactMessage);
         }
 
         $manager->flush();
