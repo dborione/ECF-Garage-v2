@@ -40,7 +40,7 @@ class CarRepository extends ServiceEntityRepository
    {
         // dd($slug);
        return $this->createQueryBuilder('c')
-           ->andWhere('c.slug LIKE :slug')
+           ->where('c.slug = :slug')
            ->setParameter('slug', $slug)
            ->getQuery()
            ->getOneOrNullResult()
@@ -59,4 +59,31 @@ class CarRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+
+    /**
+    * @return Car Returns Car object with max kilometers
+    */
+    public function highestKm()
+    {
+        return $this->createQueryBuilder('c')
+            ->orderBy('c.kilometers + 0', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    /**
+    * @return Car Returns Car object with max kilometers
+    */
+    public function lowestKm()
+    {
+        return $this->createQueryBuilder('c')
+            ->orderBy('c.kilometers + 0', 'ASC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 }

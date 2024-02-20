@@ -54,7 +54,7 @@ class AppFixtures extends Fixture
 
             $car->setTitle($faker->sentence($nbWords = 6));
             $car->setPrice($faker->randomFloat($nbMaxDecimals = 2, $min = 100, $max = 1000000));
-            $car->setImage('file');
+            $car->setImage('https://picsum.photos/id/111/4400/2656');
             $car->setYear($faker->year($max = 'now'));
             $car->setKilometers($faker->numberBetween($min = 0, $max = 500000));
             $car->setDescription($faker->paragraph());
