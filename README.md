@@ -24,7 +24,6 @@ symfony serve -d
 ```bash
 composer require doctrine/doctrine-bundle 
 ```
---> installe docker en meme temps
 
 ### Fixtures
 admin: email admin@test.com, password admin123
