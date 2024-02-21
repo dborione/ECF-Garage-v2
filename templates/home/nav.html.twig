@@ -1,3 +1,4 @@
+
 <!-- ========== HEADER ========== -->
 <header class="fixed flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
   <nav class="mt-6 max-w-[85rem] w-full bg-white border border-gray-200 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto dark:bg-gray-800 dark:border-gray-700" aria-label="Global">
@@ -14,8 +15,19 @@
       <div class="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
         <a class="font-medium text-blue-600 md:py-6 dark:text-blue-500" href="{{ path('app_review')}}" aria-current="page">Post a review</a>
         <a class="font-medium text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500" href="{{ path('app_cars')}}">Cars on sale</a>
+        <div id="square"></div>
       </div>
     </div>
+
+   {# <button 
+      id="dropdownDefault" data-dropdown-toggle="dropdown" 
+      type="button"
+      class="text-sm text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg px-3 py-2"
+      aria-labelledby="dropdownDefault"
+      aria-haspopup="true">
+          My Account 
+    </button> #}
+
   </nav>
 </header>
 <!-- ========== END HEADER ========== -->
