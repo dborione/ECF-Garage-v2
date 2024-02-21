@@ -20,7 +20,7 @@ let i = 0;
 function chSquare() {
     height += 10;
     width += 10;
-    if (height >= 420 || width >= 420) {
+    if (height >= 100 || width >= 100) {
         height = 20;
         width = 20;
     }
